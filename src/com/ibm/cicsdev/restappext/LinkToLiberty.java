@@ -37,7 +37,7 @@ public class LinkToLiberty
      * CICS mechanism. Data is passed using channels and containers.
      */
     
-    @CICSProgram("GETSUPPI")
+    @CICSProgram("GE1SUPPI")
     public void getSupplierInfo() throws CicsConditionException
     {
         // Retrieve the current channel
