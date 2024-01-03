@@ -59,7 +59,7 @@ public class LinkToLiberty
         supplier.setSupplierId(iSupplierId);
         
         // Create a new generated supplier name
-        String name = "Priya1 #" + iSupplierId;
+        String name = "Priya12 #" + iSupplierId;
         supplier.setSupplierName(name);
         
         // Store in a return container
