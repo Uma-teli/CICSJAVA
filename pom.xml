@@ -24,6 +24,11 @@
   </plugin>       
  </plugins>     
 </build>        
-        
+
+
+<properties>
+	<failOnMissingWebXml>false</failOnMissingWebXml>
+</properties>	
+	
         
 </project>
