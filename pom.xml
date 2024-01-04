@@ -10,8 +10,15 @@
 <version>1.0-SNAPSHOT</version>    
 <packaging>war</packaging>        
 <name>Maven Quick Start Archetype</name>    
-<url>http://maven.apache.org</url>        
-
+<url>http://maven.apache.org</url>   
+	
+<distributionManagement>
+	<repository>
+		<id>nexus-repo</id>
+		<name>CICSJava repo</name>
+		<url>${NEXUS_REPO}</url>
+	</repository>
+</distributionManagement>	
       
      
 <build>      
