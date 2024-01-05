@@ -41,7 +41,7 @@ public class LinkToLiberty
     public void getSupplierInfo() throws CicsConditionException
     {
         // Retrieve the current channel
-        Channel ch = Task.getTask().getCurrentChannel();
+        Channel ch = Task.getTask().getCurrentChannel();    
         
         // Get the correct container
         Container contStockPart = ch.getContainer("STOCK-PART");
@@ -59,7 +59,7 @@ public class LinkToLiberty
         supplier.setSupplierId(iSupplierId);
         
         // Create a new generated supplier name
-        String name = " Supplier #" + iSupplierId;
+        String name = "Priya #" + iSupplierId;
         supplier.setSupplierName(name);
         
         // Store in a return container
