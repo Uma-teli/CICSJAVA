@@ -55,6 +55,7 @@
       *    Message to display for normal completion.
       *    Display Supplier ID and name.
        01 RESPONSE-MESSAGE.
+          03 FILLER PIC X(16) VALUE 'WELCOME TO CICS'.
           03 FILLER PIC X(14) VALUE ' SUPPLIER ID: '.
           03 RESP-SUPPLIER-ID PIC 9(8) DISPLAY.
           03 FILLER PIC X(16) VALUE ' SUPPLIER NAME: '.
@@ -87,22 +88,22 @@
            EXEC CICS RECEIVE INTO(WS-TERMINAL-INPUT)
                      LENGTH(WS-RECEIVE-LENGTH) END-EXEC.
       *    Fold input to uppercase if not already done by CICS
-           MOVE FUNCTION UPPER-CASE(WS-TERMINAL-INPUT) 
+           MOVE FUNCTION UPPER-CASE(WS-TERMINAL-INPUT)
                 TO WS-TERMINAL-INPUT.
 
       *    Perform very basic parsing of terminal input data:
       *    1) Find length of tranid in case it's less than 4.
-           INSPECT EIBTRNID TALLYING WS-TRANID-LEN 
+           INSPECT EIBTRNID TALLYING WS-TRANID-LEN
                    FOR CHARACTERS BEFORE INITIAL SPACE.
       *    2) Find tranid in terminal input
-           INSPECT WS-TERMINAL-INPUT(1:WS-RECEIVE-LENGTH) 
-                   TALLYING WS-TRANID-POS FOR CHARACTERS 
+           INSPECT WS-TERMINAL-INPUT(1:WS-RECEIVE-LENGTH)
+                   TALLYING WS-TRANID-POS FOR CHARACTERS
                    BEFORE INITIAL EIBTRNID(1:WS-TRANID-LEN)
       *    3) Find action in remainder of string after tranid
            UNSTRING WS-TERMINAL-INPUT(1 + WS-TRANID-POS:
                     WS-RECEIVE-LENGTH - WS-TRANID-POS)
                 DELIMITED BY ALL SPACE INTO
-                WS-TRANID 
+                WS-TRANID
                 WS-SUPPLIER-TXT COUNT IN WS-SUPPLIER-LEN
            END-UNSTRING.
 
