@@ -33,10 +33,12 @@
        WORKING-STORAGE SECTION.
       *
       *    STOCK-PART copybook
-           COPY STOKPART REPLACING STOCK-PART BY WS-STOCK-PART.
+       01 WS-STOCK-PART.
+       COPY STOKPART.
       *
       *    SUPPLIER copybook
-           COPY SUPPLIER REPLACING SUPPLIER BY WS-SUPPLIER.
+       01 WS-SUPPLIER.
+       COPY SUPPLIER.
 
       *
       *    Working storage definitions
@@ -55,10 +57,14 @@
       *    Message to display for normal completion.
       *    Display Supplier ID and name.
        01 RESPONSE-MESSAGE.
+          03 FILLER PIC X(16) VALUE 'WELCOM '.
           03 FILLER PIC X(14) VALUE ' SUPPLIER ID: '.
           03 RESP-SUPPLIER-ID PIC 9(8) DISPLAY.
           03 FILLER PIC X(16) VALUE ' SUPPLIER NAME: '.
           03 RESP-SUPPLIER-NAME PIC X(40).
+
+
+
 
       *   Error message to display if Link to Liberty fails.
       *   Include slots for target PROGRAM, RESP and RESP2.
@@ -157,6 +163,7 @@
       *    Copy fields from container structure to output message.
            MOVE SUPPLIER-ID IN WS-SUPPLIER TO RESP-SUPPLIER-ID.
            MOVE SUPPLIER-NAME IN WS-SUPPLIER TO RESP-SUPPLIER-NAME.
+      *     DISPLAY 'Welcome to SimoTime...' RESP-NAME.
 
       *    Send the complete response message to the terminal.
            EXEC CICS SEND TEXT FROM(RESPONSE-MESSAGE)
@@ -166,5 +173,4 @@
            EXEC CICS RETURN END-EXEC.
       *
            GOBACK.
-      *    commented
 
