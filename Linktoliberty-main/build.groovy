@@ -72,7 +72,7 @@ else {
 // document deletions in build report
 if (deletedFiles.size() != 0 && props.documentDeleteRecords && props.documentDeleteRecords.toBoolean()) {
 	println("** Document deleted files in Build Report.")
-	if (buildUtils.assertDbbBuildToolkitVersion(props.dbbToolkitVersion, "2.0.1")) {
+	if (buildUtils.assertDbbBuildToolkitVersion(props.dbbToolkitVersion, "1.1.3")) {
 		buildReportUtils = loadScript(new File("utilities/BuildReportUtilities.groovy"))
 		buildReportUtils.processDeletedFilesList(deletedFiles)
 	}
