@@ -60,7 +60,7 @@
       *    Message to display for normal completion.
       *    Display Supplier ID and name.
        01 RESPONSE-MESSAGE.
-          03 FILLER PIC X(16) VALUE ' WELCOME '.
+          03 FILLER PIC X(16) VALUE ' WELCOME TO CICS'.
           03 FILLER PIC X(14) VALUE ' SUPPLIER ID: '.
           03 RESP-SUPPLIER-ID PIC 9(8) DISPLAY.
           03 FILLER PIC X(16) VALUE ' SUPPLIER NAME: '.
