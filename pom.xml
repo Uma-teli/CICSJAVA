@@ -14,7 +14,7 @@
 	
 <distributionManagement>
 	<repository>
-		<id>nexus-repo</id>
+		<id>nexus-site</id>
 		<name>CICSJava repo</name>
 		<url>${NEXUS_REPO}</url>
 	</repository>
