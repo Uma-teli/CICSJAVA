@@ -11,6 +11,8 @@
 <packaging>war</packaging>        
 <name>cicsjava</name>    
 <url>http://maven.apache.org</url>   
+
+
 	
 <distributionManagement>
 	<repository>
@@ -19,7 +21,9 @@
 		<url>${NEXUS_REPO}</url>
 	</repository>
 </distributionManagement>	
-      
+
+
+	
      
 <build>      
  
@@ -32,7 +36,27 @@
 	    <failOnMissingWebXml>false</failOnMissingWebXml>
     </configuration>	    
 	  
-  </plugin>       
+  </plugin> 
+	 <!--
+<plugin>
+	<groupId>org.apache.maven.plugins</groupId>
+   <artifactId>liberty-maven-plugin</artifactId>
+   <version>3.5</version>
+    <configuration>
+	    <serverName>CICSTG5.5</serverName>
+    </configuration>	    
+	  
+  </plugin> 
+
+	 <dependency>
+	 <groupId>com.ibm.cics</groupId>
+   <artifactId>cics-java-api</artifactId>
+   <version>5.5</version>
+    <configuration>
+	    <serverName>CICSTG5.5</serverName>
+    </configuration>	
+ </dependency>
+	 -->
  </plugins>     
 </build>        
 
