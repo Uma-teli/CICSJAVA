@@ -7,7 +7,7 @@
         
 <groupId>com.tcs.CICSJava</groupId>
 <artifactId>CICSJava</artifactId>    
-<version>3.0.0-SNAPSHOT</version>    
+<version>1.0.0-SNAPSHOT</version>    
 <packaging>war</packaging>        
 <name>cicsjava</name>    
 <url>http://maven.apache.org</url>   
