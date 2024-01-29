@@ -129,7 +129,7 @@
               MOVE EIBTASKN TO WS-SUPPLIER-NO
            END-IF.
 
-      *    Update the stock part supplier ID
+      *    Update the stock  part supplier ID
            MOVE WS-SUPPLIER-NO TO SUPPLIER IN WS-STOCK-PART.
 
       *    Write the stock part to the correct container.
