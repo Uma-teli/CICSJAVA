@@ -22,12 +22,37 @@
 	</repository>
 </distributionManagement>	
 
-
+<dependencies>
+    <dependency>
+        <groupId>com.ibm.cics</groupId>
+        <artifactId>com.ibm.cics.server.invocation.annotations</artifactId>
+        <version>5.5-PH14856</version>
+        <scope>provided</scope>
+    </dependency>
+</dependencies>
 	
      
 <build>      
  
  <plugins>
+
+ <plugin>
+   <artifactId>maven-compiler-plugin</artifactId>
+   <version>3.8.1</version>
+    <configuration>
+	    <annotationProcessorPaths>
+            <annotationProcessorPath>
+                <groupId>com.ibm.cics</groupId>
+                <artifactId>com.ibm.cics.server.invocation</artifactId>
+                <version>5.5</version>
+            </annotationProcessorPath>
+        </annotationProcessorPaths>
+    </configuration>	    
+	  
+  </plugin> 
+
+
+	 
   <plugin>
 	<groupId>org.apache.maven.plugins</groupId>
    <artifactId>maven-war-plugin</artifactId>
